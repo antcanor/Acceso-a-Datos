@@ -1,0 +1,3 @@
+48000111A,Ana Belén Marín,Lothal,8.5
+23000222B,Pedro Alcantarilla,Coruscan,7.2
+77000333C,Carlos Saura,Camino,6.9
