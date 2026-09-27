@@ -1,0 +1,12 @@
+Alumno : Pepe; Nota: 5.1
+Alumno : JUan; Nota: 2.3
+Alumno : ramon; Nota: 1.0
+Alumno : Alvaro; Nota: 6.6
+Alumno : Antonio; Nota: 3.4
+Alumno : Pedro; Nota: 2.1
+Alumno : Pepe; Nota: 5.4
+Alumno : Juan; Nota: 3.1
+Alumno : Pedro; Nota: 2.87
+Alumno : JUan; Nota: 6.0
+Alumno : Pepe; Nota: 4.0
+Alumno : Antonio; Nota: 6.0
