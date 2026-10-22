@@ -1,11 +1,7 @@
 package org.dam.accesoadatos.ut4;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 
 /**
@@ -34,20 +30,20 @@ public class Nave implements Serializable {
 
     @Column(name = "estado_sistema", nullable = false, length = 20)
     private String estadoSistema;
-
-    // Nota: Dejamos fuera temporalmente 'planeta_origen_id' para explicar 
-    // las relaciones @ManyToOne en la siguiente sesión práctica.
-
+    
+    @ManyToOne(fetch = FetchType.LAZY) // LAZY evita cargar el planeta de la BD a menos que se invoque explícitamente
+    @JoinColumn(name = "planeta_origen_id", foreignKey = @ForeignKey(name = "FK_NAVE_PLANETA"))
+    private Planeta planetaOrigen;
     // === REQUISITO MANDATORIO JPA: Constructor vacío (por defecto) ===
     public Nave() {
     }
 
-    // Constructor parametrizado para facilitar las inserciones en los laboratorios
-    public Nave(String nombre, String modelo, int capacidadPasajeros, String estadoSistema) {
+    public Nave(String nombre, String modelo, int capacidadPasajeros, String estadoSistema, Planeta planetaOrigen) {
         this.nombre = nombre;
         this.modelo = modelo;
         this.capacidadPasajeros = capacidadPasajeros;
         this.estadoSistema = estadoSistema;
+        this.planetaOrigen = planetaOrigen;
     }
 
     // === Métodos de acceso públicos (Getters y Setters) ===
@@ -65,11 +61,14 @@ public class Nave implements Serializable {
 
     public String getEstadoSistema() { return estadoSistema; }
     public void setEstadoSistema(String estadoSistema) { this.estadoSistema = estadoSistema; }
+    
+    public Planeta getPlanetaOrigen() { return planetaOrigen; }
+    public void setPlanetaOrigen(Planeta planetaOrigen) { this.planetaOrigen = planetaOrigen; }
 
     // Sobreescritura útil para las salidas por consola de NetBeans
     @Override
     public String toString() {
-        return "🛸 [Nave Persistida] ID: " + id + " | " + nombre + " (" + modelo + ") - Estado: " + estadoSistema;
+        return "🛸 [Nave Persistida] ID: " + id + " | " + nombre + " (" + modelo + ") - Estado: " + estadoSistema +" - Planeta Origen: " + planetaOrigen;
     }
 
 }

@@ -27,5 +27,6 @@
         <!-- Aquí se declararán más adelante las clases mapeadas/entidades -->
         <!-- <mapping class="ut4.modelo.NaveEntity"/> -->
  		<mapping class="org.dam.accesoadatos.ut4.Nave"/>
+ 		<mapping class="org.dam.accesoadatos.ut4.Planeta"/>
 	</session-factory>
 </hibernate-configuration>

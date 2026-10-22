@@ -9,7 +9,7 @@ public class TestPersistencia {
 
     public static void main(String[] args) {
         System.out.println("======= CONECTANDO TERMINAL REBELDE A HIBERNATE =======");
-
+        /*
         // 1. Instanciamos el objeto Java puro (Estado: Transitorio / Transient)
         Nave halcon = new Nave("Halcón Milenario", "YT-1300", 6, "Critico");
 
@@ -46,7 +46,7 @@ public class TestPersistencia {
             // Cerramos la factoría al terminar el hilo principal
             HibernateUtil.shutdown();
             System.out.println("======================================================");
-        }
+        }*/
     }
 }
 
